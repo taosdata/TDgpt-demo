@@ -42,7 +42,9 @@ chmod 775 analyse.sh
 
 ### 4.2 Data Introduction
 
-The TDgpt-demo/demo_data directory contains three CSV files (electricity_demand.csv, wind_power.csv, ec2_failure.csv) and three SQL scripts with the same prefix, corresponding to electricity demand forecasting, wind power generation forecasting, and operation monitoring anomaly detection scenarios respectively.
+The TDgpt-demo/demo_data directory contains three CSV files (electricity_demand.csv, wind_power.csv, ec2_failure.csv) and three SQL scripts with the same prefix, corresponding to electricity demand forecasting, wind power generation forecasting, and operation monitoring anomaly detection scenarios respectively. 
+
+The TDgpt-demo/demo_dashboard directory contains three JSON files ( electricity_demand.json , wind_power.json , and ec2_failure.json ), each corresponding to a dashboard for a specific scenario. 
 
 The docker-compose.yml has defined a persistent volume tdengine-data for the TDengine container. After the container starts, use the docker cp command to copy demo_data into the container for use.
 

@@ -41,8 +41,9 @@ cd TDgpt-demo
 chmod 775 analyse.sh
 ```
 ### 4.2 数据简介
-TDgpt-demo/demo_data下包含三个csv文件（electricity_demand.csv、wind_power.csv、ec2_failure.csv），以及三个同前缀sql脚本，
-分别对应电力需求预测、风力发电预测和运维监控异常检测场景。
+TDgpt-demo/demo_data下包含三个csv文件（electricity_demand.csv、wind_power.csv、ec2_failure.csv），以及三个同前缀sql脚本，分别对应电力需求预测、风力发电预测和运维监控异常检测场景。
+
+TDgpt-demo/demo_dashboard下包含了三个json文件（electricity_demand.json、wind_power.json、ec2_failure.json），分别对应三个场景的看板。
 
 docker-compose.yml中已经定义了TDengine容器的持久化卷：tdengine-data，待容器启动后，使用docker cp命令将demo_data拷贝至容器内使用。
 
