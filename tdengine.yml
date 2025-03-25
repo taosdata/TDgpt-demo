@@ -1,0 +1,12 @@
+apiVersion: 1
+datasources:
+- name: TDengine
+  type: tdengine-datasource
+  orgId: 1
+  url: "$TDENGINE_API"
+  isDefault: true
+  secureJsonData:
+    url: "$TDENGINE_API"
+    basicAuth: "$TDENGINE_BASIC_AUTH"
+  version: 1
+  editable: true
