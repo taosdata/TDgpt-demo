@@ -48,7 +48,7 @@ TDgpt-demo/demo_dashboard下包含了三个json文件（electricity_demand.json�
 docker-compose.yml中已经定义了TDengine容器的持久化卷：tdengine-data，待容器启动后，使用docker cp命令将demo_data拷贝至容器内使用。
 
 ## 5. 运行demo
-
+**注意：在运行demo前，请根据您宿主机的架构（CPU类型），编辑docker-compose.yml文件，为TDengine指定对应的platform参数：linux/amd64（Intel/AMD CPU）或linux/arm64（ARM CPU）。TDgpt必须统一使用linux/amd64参数。**
 ### 5.1 服务启停
 在TDgpt-demo目录下执行如下命令：
 ```bash
