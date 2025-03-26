@@ -43,7 +43,7 @@ chmod 775 analyse.sh
 ### 4.2 数据简介
 TDgpt-demo/demo_data下包含三个csv文件（electricity_demand.csv、wind_power.csv、ec2_failure.csv），以及三个同前缀sql脚本，分别对应电力需求预测、风力发电预测和运维监控异常检测场景。
 
-TDgpt-demo/demo_dashboard下包含了三个json文件（electricity_demand.json、wind_power.json、ec2_failure.json），分别对应三个场景的看板。
+TDgpt-demo/demo_dashboard下包含了三个json文件（electricity_demand_forecast.json , wind_power_forecast.json , and ec2_failure_anomaly.json），分别对应三个场景的看板。
 
 docker-compose.yml中已经定义了TDengine容器的持久化卷：tdengine-data，待容器启动后，使用docker cp命令将demo_data拷贝至容器内使用。
 
@@ -81,7 +81,7 @@ docker exec -it tdengine taos -s "source /var/lib/taos/demo_data/init_ec2_failur
 ### 5.3 配置Grafana看板
 
 1. 打开浏览器，输入http://localhost:3000，并用默认的用户名口令 admin/admin 登录Grafana。
-2. 登录成功后，进入路径"Home → Dashboards"页面，并且依次导入electricity_demand_forecast.json、wind_power.json、ec2_failure_anomaly.json文件。 
+2. 登录成功后，进入路径"Home → Dashboards"页面，并且依次导入electricity_demand_forecast.json、wind_power_forecast.json、ec2_failure_anomaly.json文件。 
 4. 选择看板并查看结果。 初始看板上只显示electricity_demand、wind_power、ec2_failure数据的真实值。
 5. 按照下列步骤，执行shell脚本命令，将基于原始的数据，生成动态的预测结果，并呈现在看板上。看板配置为5s刷新，在执行过程中可查看动态预测曲线。
 

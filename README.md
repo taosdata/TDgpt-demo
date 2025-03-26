@@ -44,7 +44,7 @@ chmod 775 analyse.sh
 
 The TDgpt-demo/demo_data directory contains three CSV files (electricity_demand.csv, wind_power.csv, ec2_failure.csv) and three SQL scripts with the same prefix, corresponding to electricity demand forecasting, wind power generation forecasting, and operation monitoring anomaly detection scenarios respectively. 
 
-The TDgpt-demo/demo_dashboard directory contains three JSON files ( electricity_demand.json , wind_power.json , and ec2_failure.json ), each corresponding to a dashboard for a specific scenario. 
+The TDgpt-demo/demo_dashboard directory contains three JSON files ( electricity_demand_forecast.json , wind_power_forecast.json , and ec2_failure_anomaly.json ), each corresponding to a dashboard for a specific scenario. 
 
 The docker-compose.yml has defined a persistent volume tdengine-data for the TDengine container. After the container starts, use the docker cp command to copy demo_data into the container for use.
 
@@ -84,7 +84,7 @@ docker exec -it tdengine taos -s "source /var/lib/taos/demo_data/init_ec2_failur
 ### 5.3 Configuring the Grafana Dashboard
 
 1. Open your browser and enter http://localhost:3000, then log in to Grafana with the default username and password admin/admin.
-2. After logging in, go to the "Home → Dashboards" page and import the electricity_demand_forecast.json, wind_power.json, and ec2_failure_anomaly.json files one by one.
+2. After logging in, go to the "Home → Dashboards" page and import the electricity_demand_forecast.json, wind_power_forecast.json, and ec2_failure_anomaly.json files one by one.
 4. Select the dashboard to view the results. The initial dashboard only shows the actual values of electricity_demand, wind_power, and ec2_failure.
 5. Follow the steps below to execute the shell script command, which will generate dynamic forecasting results based on the original data and display them on the dashboard. The dashboard is configured to refresh every 5 seconds, so you can view the dynamic forecasting curve during execution.
 
