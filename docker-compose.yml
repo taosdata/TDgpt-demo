@@ -3,7 +3,7 @@ services:
     image : tdengine/tdengine:3.3.6.0
     container_name: tdengine
     hostname: tdengine
-    # linux/amd64 or linux/arm64, depends on your platform
+    # linux/amd64 for Intel/AMD CPUs or linux/arm64 for ARM CPUs
     platform: linux/amd64
     environment:
       TAOS_FQDN: "tdengine"
@@ -18,9 +18,9 @@ services:
   tdgpt:
     image: tdengine/tdengine-tdgpt:3.3.6.0
     container_name: tdgpt
-    # linux/amd64 or linux/arm64, depends on your platform
     platform: linux/amd64
     environment:
+
       TZ: Asia/Shanghai
     ports:
       - 6090:6090

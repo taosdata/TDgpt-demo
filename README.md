@@ -49,7 +49,7 @@ The TDgpt-demo/demo_dashboard directory contains three JSON files ( electricity_
 The docker-compose.yml has defined a persistent volume tdengine-data for the TDengine container. After the container starts, use the docker cp command to copy demo_data into the container for use.
 
 ## 5. Running the Demo
-
+**Note: Before running the demo, edit the docker-compose.yml file to explicitly specify the corresponding platform parameter ( linux/amd64 for Intel/AMD CPUs or linux/arm64 for ARM CPUs) for TDengine based on your host machine's architecture. TDgpt must be configured to use the linux/amd64 platform parameter.**
 ### 5.1 Starting and Stopping Services
 
 In the TDgpt-demo directory, execute the following commands:
