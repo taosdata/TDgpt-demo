@@ -1,23 +1,27 @@
-version: "3.7"
-
 services:
   tdengine:
-    image: image.cloud.taosdata.com/tdengine/tdengine-preview:3.3.6.0-arm64
-    #image : tdengine/tdengine-aarch64:3.3.5.8 
+    image : tdengine/tdengine:3.3.6.0
     container_name: tdengine
     hostname: tdengine
+    # linux/amd64 or linux/arm64, depends on your platform
+    platform: linux/amd64
     environment:
       TAOS_FQDN: "tdengine"
       MONITOR_FQDN: "tdengine"
       EXPLORER_CLUSTER: "http://tdengine:6041"
       TAOS_KEEPER_TDENGINE_HOST: "tdengine"
+      TZ: Asia/Shanghai
     volumes:
       - tdengine-data:/var/lib/taos/
     ports:
       - 6060:6060
   tdgpt:
-    image: image.cloud.taosdata.com/tdgpt/tdgpt-aarch64:3.3.6.0
+    image: tdengine/tdengine-tdgpt:3.3.6.0
     container_name: tdgpt
+    # linux/amd64 or linux/arm64, depends on your platform
+    platform: linux/amd64
+    environment:
+      TZ: Asia/Shanghai
     ports:
       - 6090:6090
   grafana:
@@ -31,6 +35,7 @@ services:
       GF_INSTALL_PLUGINS: "tdengine-datasource"
       TDENGINE_API: "http://tdengine:6041"
       TDENGINE_BASIC_AUTH: "cm9vdDp0YW9zZGF0YQ=="
+      TZ: Asia/Shanghai
     ports:
       - 3000:3000
 volumes:
