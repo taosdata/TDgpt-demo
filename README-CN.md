@@ -47,8 +47,6 @@ TDgpt-demo/demo_dashboard下包含了三个json文件（electricity_demand.json�
 
 docker-compose.yml中已经定义了TDengine容器的持久化卷：tdengine-data，待容器启动后，使用docker cp命令将demo_data拷贝至容器内使用。
 
-注意：如果宿主机为aarch-64架构，请将docker-compose.yml中TDengine和TDgpt的镜像名称加上-aarch64后缀（形如tdgpt-aarch64:3.3.6.0）。
-
 ## 5. 运行demo
 
 ### 5.1 服务启停
