@@ -1,6 +1,6 @@
 services:
   tdengine:
-    image : tdengine/tdengine:3.3.6.0
+    image : tdengine/tdengine:3.3.6.3
     container_name: tdengine
     hostname: tdengine
     # linux/amd64 for Intel/AMD CPUs or linux/arm64 for ARM CPUs
@@ -16,7 +16,7 @@ services:
     ports:
       - 6060:6060
   tdgpt:
-    image: tdengine/tdengine-tdgpt:3.3.6.0
+    image: tdengine/tdengine-tdgpt:3.3.6.3
     container_name: tdgpt
     platform: linux/amd64
     environment:
