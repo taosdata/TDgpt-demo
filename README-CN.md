@@ -101,7 +101,7 @@ Processing window: 2024-01-12 00:00:00 → 2024-02-11 00:00:00
 Welcome to the TDengine Command Line Interface, Client Version:3.3.6.0
 Copyright (c) 2023 by TDengine, all rights reserved.
 
-taos> INSERT INTO tdgpt_demo.electricity_demand_tdtsfm_1_result SELECT _frowts, forecast(val, 'algorithm=tdtsfm_1,fc_rows=48,wncheck=0') 
+taos> INSERT INTO tdgpt_demo.electricity_demand_tdtsfm_1_result SELECT _frowts, forecast(val, 'algo=tdtsfm_1,rows=48,wncheck=0') 
                FROM tdgpt_demo.electricity_demand
                WHERE ts >= '2024-01-12 00:00:00' AND ts < '2024-02-11 00:00:00'
 Insert OK, 48 row(s) affected (0.238208s)
