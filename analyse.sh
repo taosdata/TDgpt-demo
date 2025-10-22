@@ -130,7 +130,7 @@ generate_sql() {
         "forecast")
             echo "INSERT INTO $RESULT_TABLE 
                   SELECT _frowts AS $TS_COL, 
-                         forecast($VAL_COL, 'algorithm=$ALGORITHM_NAME$algo_params') AS $VAL_COL 
+                         forecast($VAL_COL, 'algo=$ALGORITHM_NAME$algo_params') AS $VAL_COL
                   FROM $TABLE_NAME 
                   WHERE $TS_COL >= '$window_start' AND $TS_COL < '$window_end'"
             ;;
